@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+    <h1>Tic Tac Toe</h1>
+    <div id="container" class="board"></div>
+
+    <script>
+        const arr_tic_tac_toe = ['x', 'o'];
+        const game = new Array(9).fill(null);
+        let currentPlayer = 0;
+
+        function cell_click(cell_number) {
+            if (game[cell_number] === null) {
+                game[cell_number] = arr_tic_tac_toe[currentPlayer];
+                document.getElementById(`cell-${cell_number}`).textContent = arr_tic_tac_toe[currentPlayer];
+                currentPlayer = (currentPlayer + 1) % 2;
+                check_winner();
+            }
+        }
+
+        const get_container = document.getElementById('container');
+        for (let i = 0; i < 9; i++) {
+            const new_cell = document.createElement('div');
+            new_cell.addEventListener('click', () => cell_click(i));
+            new_cell.classList.add('cell');
+            new_cell.id = `cell-${i}`;
+            get_container.appendChild(new_cell);
+        }
+
+        function check_winner() {
+            const winningCombinations = [
+                [0, 1, 2], [3, 4, 5], [6, 7, 8],  // rows
+                [0, 3, 6], [1, 4, 7], [2, 5, 8],  // columns
+                [0, 4, 8], [2, 4, 6]              // diagonals
+            ];
+
+            for (const combination of winningCombinations) {
+                const [a, b, c] = combination;
+                if (game[a] && game[a] === game[b] && game[a] === game[c]) {
+                    alert(`${game[a]} wins!`);
+                   new_cell.innerHTML=''
+                    return; 
+                  
+                }
+            }
+
+            if (!game.includes(null)) {
+                alert("It's a draw!");
+            }
+        }
+    </script>
+</body>
+</html>

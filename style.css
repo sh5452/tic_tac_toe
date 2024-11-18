@@ -1,0 +1,51 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(#f9c4c4, #fe7b7b,#ccc);
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 3em;
+    background: linear-gradient(90deg, #368ce8, #073263);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent; /* for webkit browsers */
+    box-shadow: -1em 0 .4em rgb(58, 103, 161);
+    font-style: italic;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    width: 60vmin;
+    height: 60vmin;
+    background: linear-gradient(#f9c4c4, #fe7b7b,#ccc);
+}
+
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #93d6fb;
+    border: 1px solid #ccc;
+    font-size: 5vmin;
+    cursor: pointer;
+  
+}
+
+.cell:hover {
+    background-color: #0c81bc;
+}
+
