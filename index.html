@@ -57,7 +57,14 @@
                 return;
             }
         }
-        
+        function reset_board(){
+            //מאפס את התאים
+            for(let i=0; i<9; i++){
+                document.getElementById(`cell-${i}`).textContent='';
+                game[i]=0; //מאפס את המערך
+            }
+            currentPlayer=0; //מאתחל את השחקו
+        }
     </script>
 </body>
 </html>
