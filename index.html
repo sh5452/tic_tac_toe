@@ -44,16 +44,20 @@
                 const [a, b, c] = combination;
                 if (game[a] && game[a] === game[b] && game[a] === game[c]) {
                     alert(`${game[a]} wins!`);
-                   new_cell.innerHTML=''
-                    return; 
+                  reset_board()
+                   return;
+                   
                   
                 }
             }
 
             if (!game.includes(null)) {
                 alert("It's a draw!");
+                reset_board()
+                return;
             }
         }
+        
     </script>
 </body>
 </html>
