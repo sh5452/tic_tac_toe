@@ -20,7 +20,21 @@ h1 {
     -webkit-text-fill-color: transparent; /* for webkit browsers */
     box-shadow: -1em 0 .4em rgb(58, 103, 161);
     font-style: italic;
+    border: 2px solid white; /* מסגרת לבנה */
+    padding: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* צל לכותרת */
+    animation: fade 3s infinite; /* אנימציה */
+
 }
+@keyframes fade {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
 
 .board {
     display: grid;
