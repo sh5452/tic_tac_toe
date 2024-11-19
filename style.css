@@ -11,6 +11,7 @@ body {
 }
 
 h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     margin-bottom: 20px;
     font-size: 3em;
     background: linear-gradient(90deg, #368ce8, #073263);
@@ -22,7 +23,7 @@ h1 {
     font-style: italic;
     border: 2px solid white; /* מסגרת לבנה */
     padding: 10px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* צל לכותרת */
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5); /* צל לכותרת */
     animation: fade 3s infinite; /* אנימציה */
 
 }
@@ -41,9 +42,10 @@ h1 {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap: 10px;
-    width: 60vmin;
-    height: 60vmin;
+    width: 100vmin;
+    height: 100vmin;
     background: linear-gradient(#f9c4c4, #fe7b7b,#ccc);
+    margin-bottom: 15px;
 }
 
 .cell {
@@ -52,14 +54,14 @@ h1 {
     justify-content: center;
     width: 100%;
     height: 100%;
-    background-color: #93d6fb;
+    background:linear-gradient(#073263, #6185ad);
     border: 1px solid #ccc;
-    font-size: 5vmin;
+    font-size: 10vmin;
     cursor: pointer;
   
 }
 
 .cell:hover {
-    background-color: #0c81bc;
+    background:linear-gradient(#0cb0bc,#0d0f7f) ;
 }
 
