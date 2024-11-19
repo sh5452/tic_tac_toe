@@ -12,11 +12,11 @@
 
     <script>
         const arr_tic_tac_toe = ['x', 'o'];
-        const game = new Array(9).fill(null);
+        const game = new Array(9).fill(null); // מערך שמתחיל עם null
         let currentPlayer = 0;
 
         function cell_click(cell_number) {
-            if (game[cell_number] === null) {
+            if (game[cell_number] === null) { // בודק אם התא ריק
                 game[cell_number] = arr_tic_tac_toe[currentPlayer];
                 document.getElementById(`cell-${cell_number}`).textContent = arr_tic_tac_toe[currentPlayer];
                 currentPlayer = (currentPlayer + 1) % 2;
@@ -35,35 +35,34 @@
 
         function check_winner() {
             const winningCombinations = [
-                [0, 1, 2], [3, 4, 5], [6, 7, 8],  // rows
-                [0, 3, 6], [1, 4, 7], [2, 5, 8],  // columns
-                [0, 4, 8], [2, 4, 6]              // diagonals
+                [0, 1, 2], [3, 4, 5], [6, 7, 8],  // שורות
+                [0, 3, 6], [1, 4, 7], [2, 5, 8],  // עמודות
+                [0, 4, 8], [2, 4, 6]              // אלכסונים
             ];
 
             for (const combination of winningCombinations) {
                 const [a, b, c] = combination;
                 if (game[a] && game[a] === game[b] && game[a] === game[c]) {
                     alert(`${game[a]} wins!`);
-                  reset_board()
-                   return;
-                   
-                  
+                    reset_board();
+                    return;
                 }
             }
 
             if (!game.includes(null)) {
                 alert("It's a draw!");
-                reset_board()
+                reset_board();
                 return;
             }
         }
-        function reset_board(){
-            //מאפס את התאים
-            for(let i=0; i<9; i++){
-                document.getElementById(`cell-${i}`).textContent='';
-                game[i]=0; //מאפס את המערך
+
+        function reset_board() {
+            // מאפס את כל התאים
+            for (let i = 0; i < 9; i++) {
+                document.getElementById(`cell-${i}`).textContent = ''; // מרוקן את הטקסט
+                game[i] = null; // מאתחל את המערך ל-null
             }
-            currentPlayer=0; //מאתחל את השחקו
+            currentPlayer = 0; // מאתחל את השחקן הנוכחי
         }
     </script>
 </body>
