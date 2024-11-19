@@ -59,10 +59,12 @@
         function reset_board() {
             // מאפס את כל התאים
             for (let i = 0; i < 9; i++) {
-                document.getElementById(`cell-${i}`).textContent = ''; // מרוקן את הטקסט
+                const cell= document.getElementById(`cell-${i}`).textContent = ''; // מרוקן את הטקסט
                 game[i] = null; // מאתחל את המערך ל-null
+                
             }
             currentPlayer = 0; // מאתחל את השחקן הנוכחי
+            
         }
     </script>
 </body>
